@@ -18,6 +18,38 @@ class AbstractFields(ABC):
         pass
 
 
+class AbstractNotebook(ABC):
+    @abstractmethod
+    def name(self):
+        pass
+
+    @abstractmethod
+    def make_note(self) -> str:
+        pass
+
+    @abstractmethod
+    def change_note(self, *args: str) -> str:
+        pass
+
+
+class AbstractAddressBook(ABC):
+    @abstractmethod
+    def name(self):
+        pass
+
+    @abstractmethod
+    def add_contact(self):
+        pass
+
+    @abstractmethod
+    def change_contact(self, *args: str) -> str:
+        pass
+
+    @abstractmethod
+    def check_birthdays(self, period: str) -> str:
+        pass
+
+
 class AbstractRecordContainer(UserDict, ABC):
     @abstractmethod
     def load_data(cls, filepath: str) -> None | dict:
